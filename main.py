@@ -21,7 +21,6 @@ class Livre(Document):
 
 
 
-
 # Adherent id, nom, prenom,
 # identifiant unique ...
 
