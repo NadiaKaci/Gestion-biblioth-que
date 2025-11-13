@@ -19,3 +19,4 @@ class Adherent:
     def __str__(self):
         return f"[Adhérent {self.id}: {self.nom} {self.prenom}]"
 
+#aaaaa
