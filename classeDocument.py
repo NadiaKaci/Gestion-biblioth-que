@@ -6,11 +6,4 @@ class Document(ABC):
         self.auteur = auteur
 
     def __str__(self):
-Br-nadia1
         return f"[Document: {self.nom} | Auteur: {self.auteur}]"
-=======
-        return f"[Document  {self.nom}   {self.auteur}]"
-# to confirm
-
-#/3éééé
-main
