@@ -26,6 +26,7 @@ class Livre(Document):
 class Adherent:
     pass
 
+
 # Emprunt (livre, adherent)
 
 class Emprunt:
