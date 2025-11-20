@@ -24,7 +24,6 @@ class Adherent:
 #Gestion d'adherents:
 
 import csv
-from adherent import Adherent
 
 class GestionAdherents:
 
