@@ -33,15 +33,48 @@ def saisie_date_iso(prompt):
 # ---------------------------------
 # Classes
 # ---------------------------------
-# Classe Document (abstraite)
-class Document(ABC):
-    def __init__(self, nom, auteur):
-        self.nom = nom
-        self.auteur = auteur
+class Document:
+    def __init__(self, id_doc, titre, auteur=""):
+        self.id = id_doc
+        self.titre = titre
+        self.auteur = auteur  # ajouté ici
 
-    def __str__(self):
-        return f"[Document: {self.nom} | Auteur: {self.auteur}]"
+    def to_csv_row(self):
+        return [self.id, self.__class__.__name__, self.titre, self.auteur]
 
+    @staticmethod
+    def from_csv_row(row):
+        if len(row) < 3:
+            raise ValueError(f"CSV Document invalide : {row}")
+        id_doc = row[0]
+        type_doc = row[1]
+        titre = row[2]
+        rest = row[3:] if len(row) > 3 else []
+
+        if type_doc == "Livre":
+            dispo = rest[1] == 'True' if len(rest) > 1 else True
+            auteur = rest[0] if len(rest) > 0 else ""
+            return Livre(id_doc, titre, auteur, dispo)
+        elif type_doc == "BandeDessinee":
+            auteur = rest[0] if len(rest) > 0 else ""
+            dessinateur = rest[1] if len(rest) > 1 else ""
+            return BandeDessinee(id_doc, titre, auteur, dessinateur)
+        elif type_doc == "Dictionnaire":
+            auteur = rest[0] if len(rest) > 0 else ""
+            return Dictionnaire(id_doc, titre, auteur)
+        elif type_doc == "Journal":
+            auteur = rest[1] if len(rest) > 1 else ""
+            if len(rest) > 0:
+                try:
+                    date_parution = datetime.strptime(rest[0], "%Y-%m-%d").date()
+                except ValueError:
+                    date_parution = date.today()
+            else:
+                date_parution = date.today()
+            return Journal(id_doc, titre, auteur, date_parution)
+        else:
+            auteur = rest[0] if len(rest) > 0 else ""
+            return Document(id_doc, titre, auteur)
 # Classe Adherent
 class Adherent:
     def __init__(self, id_adherent, nom, prenom, email=""):
