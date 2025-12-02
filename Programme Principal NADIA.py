@@ -75,6 +75,52 @@ class Document:
         else:
             auteur = rest[0] if len(rest) > 0 else ""
             return Document(id_doc, titre, auteur)
+
+class Livre(Document):
+    def __init__(self, id_doc, titre, est_disponible=True, auteur=""):
+        super().__init__(id_doc, titre, auteur)
+        self.est_disponible = est_disponible
+
+    def to_csv_row(self):
+        return [self.id, "Livre", self.titre, self.auteur, str(self.est_disponible)]
+
+    def __str__(self):
+        dispo = "Oui" if self.est_disponible else "Non"
+        auteur_str = f" | Auteur : {self.auteur}" if self.auteur else ""
+        return f"[Livre] {self.titre}{auteur_str} | Disponible : {dispo}"
+
+class BandeDessinee(Document):
+    def __init__(self, id_doc, titre, dessinateur):
+        super().__init__(id_doc, titre)
+        self.dessinateur = dessinateur
+
+    def to_csv_row(self):
+        return [self.id, "BandeDessinee", self.titre, self.dessinateur]
+
+    def __str__(self):
+        return f"[BD] {self.titre} | Dessinateur : {self.dessinateur}"
+
+class Dictionnaire(Document):
+    def __init__(self, id_doc, titre, auteur):
+        super().__init__(id_doc, titre, auteur)
+
+    def to_csv_row(self):
+        return [self.id, "Dictionnaire", self.titre, self.auteur]
+
+    def __str__(self):
+        return f"[Dictionnaire] {self.titre} | Auteur : {self.auteur}"
+
+class Journal(Document):
+    def __init__(self, id_doc, titre, date_parution):
+        super().__init__(id_doc, titre)
+        self.date_parution = date_parution
+
+    def to_csv_row(self):
+        return [self.id, "Journal", self.titre, self.date_parution.isoformat()]
+
+    def __str__(self):
+        return f"[Journal] {self.titre} | Parution : {self.date_parution}"
+
 # Classe Adherent
 class Adherent:
     def __init__(self, id_adherent, nom, prenom, email=""):
