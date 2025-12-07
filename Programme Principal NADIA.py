@@ -175,5 +175,75 @@ class Emprunt:
 
     def __str__(self):
         return f"Emprunt ID {self.id} | Adhérent {self.id_adherent} | Livre {self.id_livre} | Emprunt : {self.date_emprunt} | Retour : {self.date_retour}"
+# -----------------------------
+# Classe Bibliotheque
+# -----------------------------
+class Bibliotheque:
+    def __init__(self):
+        self.adherents = []
+        self.documents = []
+        self.emprunts = []
+
+    def nouvelle_id(self, collection):
+        if collection:
+            return str(int(max([obj.id for obj in collection], key=int)) + 1)
+        return "1"
+
+    def charger_csv(self):
+        try:
+            with open("adherents.csv", newline='', encoding="utf-8") as f:
+                reader = csv.reader(f)
+                self.adherents = [Adherent.from_csv_row(row) for row in reader]
+        except FileNotFoundError:
+            self.adherents = []
+            print("Fichier 'adherents.csv' non trouvé, création d’une nouvelle liste.")
+        try:
+            with open("documents.csv", newline='', encoding="utf-8") as f:
+                reader = csv.reader(f)
+                self.documents = [Document.from_csv_row(row) for row in reader]
+        except FileNotFoundError:
+            self.documents = []
+            print("Fichier 'documents.csv' non trouvé, création d’une nouvelle liste.")
+        try:
+            with open("emprunts.csv", newline='', encoding="utf-8") as f:
+                reader = csv.reader(f)
+                self.emprunts = [Emprunt.from_csv_row(row) for row in reader]
+        except FileNotFoundError:
+            self.emprunts = []
+            print("Fichier 'emprunts.csv' non trouvé, création d’une nouvelle liste.")
+
+    def sauvegarder_csv(self):
+        try:
+            with open("adherents.csv", "w", newline='', encoding="utf-8") as f:
+                writer = csv.writer(f)
+                for a in self.adherents:
+                    writer.writerow(a.to_csv_row())
+            with open("documents.csv", "w", newline='', encoding="utf-8") as f:
+                writer = csv.writer(f)
+                for d in self.documents:
+                    writer.writerow(d.to_csv_row())
+            with open("emprunts.csv", "w", newline='', encoding="utf-8") as f:
+                writer = csv.writer(f)
+                for e in self.emprunts:
+                    writer.writerow(e.to_csv_row())
+        except Exception as e:
+            print(f"Erreur lors de la sauvegarde CSV : {e}")
+ # Gestion Adherents
+    def ajouter_adherent(self, nom, prenom, email=""):
+        id_ad = self.nouvelle_id(self.adherents)
+        self.adherents.append(Adherent(id_ad, nom, prenom, email))
+        print("Adhérent ajouté.")
+
+    def supprimer_adherent(self, id_ad):
+        before = len(self.adherents)
+        self.adherents = [a for a in self.adherents if a.id != id_ad]
+        after = len(self.adherents)
+        print(f"Adhérent supprimé." if before != after else "Aucun adhérent trouvé avec cet ID.")
+
+    def afficher_adherents(self):
+        if not self.adherents:
+            print("Aucun adhérent.")
+        for idx, a in enumerate(self.adherents, 1):
+            print(f"{idx}. {a}")
 
 
