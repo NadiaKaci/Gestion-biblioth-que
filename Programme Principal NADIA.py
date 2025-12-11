@@ -246,4 +246,59 @@ class Bibliotheque:
         for idx, a in enumerate(self.adherents, 1):
             print(f"{idx}. {a}")
 
+# Gestion Documents
+    def ajouter_document(self, doc):
+        self.documents.append(doc)
+        print("Document ajouté.")
+
+    def supprimer_document(self, id_doc):
+        before = len(self.documents)
+        self.documents = [d for d in self.documents if d.id != id_doc]
+        after = len(self.documents)
+        print(f"Document supprimé." if before != after else "Aucun document trouvé avec cet ID.")
+
+    def afficher_documents(self):
+        if not self.documents:
+            print("Aucun document.")
+        for idx, d in enumerate(self.documents, 1):
+            print(f"{idx}. {d}")
+
+    # Gestion Emprunts
+    def ajouter_emprunt(self, id_ad, id_livre):
+        adherent = next((a for a in self.adherents if a.id == id_ad), None)
+        if not adherent:
+            print("Adhérent introuvable.")
+            return
+
+        livre = next((l for l in self.documents if l.id == id_livre and isinstance(l, Livre)), None)
+        if not livre:
+            print("Livre introuvable.")
+            return
+        if not livre.est_disponible:
+            print("Livre non disponible.")
+            return
+
+        date_emprunt = date.today()
+        date_retour = date_emprunt + timedelta(days=15)
+        id_e = self.nouvelle_id(self.emprunts)
+        self.emprunts.append(Emprunt(id_e, id_ad, id_livre, date_emprunt, date_retour))
+        livre.est_disponible = False
+        print("Emprunt ajouté.")
+
+    def retour_emprunt(self, id_e):
+        emprunt = next((e for e in self.emprunts if e.id == id_e), None)
+        if not emprunt:
+            print("Emprunt introuvable.")
+            return
+        livre = next((l for l in self.documents if l.id == emprunt.id_livre), None)
+        if livre and isinstance(livre, Livre):
+            livre.est_disponible = True
+        self.emprunts = [e for e in self.emprunts if e.id != id_e]
+        print("Livre retourné et emprunt supprimé.")
+
+    def afficher_emprunts(self):
+        if not self.emprunts:
+            print("Aucun emprunt.")
+        for idx, e in enumerate(self.emprunts, 1):
+            print(f"{idx}. {e}")
 
