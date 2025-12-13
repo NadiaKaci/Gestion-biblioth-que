@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from typing import List, Optional
+from datetime import date
 
 from .document import Document
 from .livre import Livre
@@ -9,14 +10,14 @@ from .emprunt import Emprunt
 
 
 class Bibliotheque:
-    """Gère les documents, adhérents et emprunts."""
+    """Gère les documents, les adhérents et les emprunts."""
 
     def __init__(self) -> None:
         self.documents: List[Document] = []
         self.adherents: List[Adherent] = []
         self.emprunts: List[Emprunt] = []
 
-    # --- gestion des adhérents ---
+    # ---------- Adhérents ----------
 
     def ajouter_adherent(self, adherent: Adherent) -> None:
         self.adherents.append(adherent)
@@ -31,7 +32,7 @@ class Bibliotheque:
     def lister_adherents(self) -> List[Adherent]:
         return list(self.adherents)
 
-    # --- gestion des documents ---
+    # ---------- Documents ----------
 
     def ajouter_document(self, doc: Document) -> None:
         self.documents.append(doc)
@@ -47,16 +48,18 @@ class Bibliotheque:
         return list(self.documents)
 
     def trouver_livre_disponible(self, titre: str) -> Optional[Livre]:
+        """Retourne un Livre disponible avec ce titre, ou None."""
         for d in self.documents:
             if isinstance(d, Livre) and d.titre == titre and d.est_disponible():
                 return d
         return None
 
-    # --- gestion des emprunts ---
+    # ---------- Emprunts ----------
 
     def emprunter_livre(
-        self, adherent: Adherent, titre_livre: str, date_emprunt
+        self, adherent: Adherent, titre_livre: str, date_emprunt: date
     ) -> bool:
+        """Crée un emprunt si un livre disponible existe ; retourne True/False."""
         livre = self.trouver_livre_disponible(titre_livre)
         if livre is None:
             return False
@@ -67,8 +70,9 @@ class Bibliotheque:
         return True
 
     def retourner_livre(
-        self, adherent: Adherent, titre_livre: str, date_retour
+        self, adherent: Adherent, titre_livre: str, date_retour: date
     ) -> bool:
+        """Marque le retour du livre emprunté par cet adhérent, si trouvé."""
         for e in self.emprunts:
             if (
                 e.adherent is adherent
