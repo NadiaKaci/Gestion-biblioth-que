@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="055a91af-08d9-43cc-b91b-e37a904ee33e" name="Changes" comment="commit update" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="fonctionnalite-nadia" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;BuildByTarek&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NadiaKaci/Gestion-biblioth-que.git&quot;,
+    &quot;accountId&quot;: &quot;f8162a95-bf98-4df9-ad4e-44c8425962fc&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="36l3Bamtxkl6cY22ZguCosBZDFT" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.FFFF.executor": "Run",
+    "Python.Programme Principal NADIA.executor": "Run",
+    "Python.Programme principale Tarek.executor": "Run",
+    "Python.Programme principale Tarek_main.executor": "Run",
+    "Python.TP1.biblio.executor": "Run",
+    "Python.controleur_adherents.executor": "Run",
+    "Python.controleur_documents.executor": "Run",
+    "Python.controleur_emprunts.executor": "Run",
+    "Python.controleur_principal.executor": "Run",
+    "Python.fenetre_principale.executor": "Run",
+    "Python.gestion_csv.executor": "Run",
+    "Python.hh.executor": "Run",
+    "Python.main avec_PyQT6.executor": "Run",
+    "Python.mainNadia.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.validations.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "database.data.extractors.current.export.id": "SQL Updates",
+    "database.data.extractors.current.id": "SQL Updates",
+    "git-widget-placeholder": "br-Tarek",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Project P-O-O\TP1.biblio" />
+      <recent name="C:\Project P-O-O\TP1.biblio\interface_pyqt" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-PY-253.28294.336" />
+        <option value="bundled-python-sdk-0978a7220b69-9867c7d4c0a4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.28294.336" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="055a91af-08d9-43cc-b91b-e37a904ee33e" name="Changes" comment="" />
+      <created>1765567196127</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765567196127</updated>
+      <workItem from="1765567197577" duration="1110000" />
+      <workItem from="1765568450912" duration="759000" />
+      <workItem from="1765569220203" duration="26260000" />
+    </task>
+    <task id="LOCAL-00001" summary="OK">
+      <option name="closed" value="true" />
+      <created>1765567481776</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1765567481776</updated>
+    </task>
+    <task id="LOCAL-00002" summary="commit modele">
+      <option name="closed" value="true" />
+      <created>1765575999392</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765575999392</updated>
+    </task>
+    <task id="LOCAL-00003" summary="commit fichier_CSV">
+      <option name="closed" value="true" />
+      <created>1765576124835</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1765576124835</updated>
+    </task>
+    <task id="LOCAL-00004" summary="commit controleur">
+      <option name="closed" value="true" />
+      <created>1765583739920</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1765583739920</updated>
+    </task>
+    <task id="LOCAL-00005" summary="commit main_console">
+      <option name="closed" value="true" />
+      <created>1765584906260</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1765584906260</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update">
+      <option name="closed" value="true" />
+      <created>1765585264474</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1765585264474</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update">
+      <option name="closed" value="true" />
+      <created>1765585377486</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1765585377486</updated>
+    </task>
+    <task id="LOCAL-00008" summary="commit gestion_csv">
+      <option name="closed" value="true" />
+      <created>1765587462336</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1765587462336</updated>
+    </task>
+    <task id="LOCAL-00009" summary="commit">
+      <option name="closed" value="true" />
+      <created>1765590212003</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1765590212003</updated>
+    </task>
+    <task id="LOCAL-00010" summary="commit Main_interface_Graphique">
+      <option name="closed" value="true" />
+      <created>1765590271727</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1765590271727</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Ajout interface PyQt">
+      <option name="closed" value="true" />
+      <created>1765590352001</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1765590352001</updated>
+    </task>
+    <task id="LOCAL-00012" summary="commit main_console">
+      <option name="closed" value="true" />
+      <created>1765590421169</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1765590421169</updated>
+    </task>
+    <task id="LOCAL-00013" summary="update">
+      <option name="closed" value="true" />
+      <created>1765590435514</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1765590435514</updated>
+    </task>
+    <task id="LOCAL-00014" summary="update main_console">
+      <option name="closed" value="true" />
+      <created>1765594411900</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1765594411900</updated>
+    </task>
+    <task id="LOCAL-00015" summary="commit update">
+      <option name="closed" value="true" />
+      <created>1765632405604</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1765632405604</updated>
+    </task>
+    <task id="LOCAL-00016" summary="commit update">
+      <option name="closed" value="true" />
+      <created>1765635102095</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1765635102095</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="br-Tarek" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="OK" />
+    <MESSAGE value="commit modele" />
+    <MESSAGE value="commit fichier_CSV" />
+    <MESSAGE value="commit controleur" />
+    <MESSAGE value="commit gestion_csv" />
+    <MESSAGE value="commit" />
+    <MESSAGE value="commit Main_interface_Graphique" />
+    <MESSAGE value="Ajout interface PyQt" />
+    <MESSAGE value="commit main_console" />
+    <MESSAGE value="update" />
+    <MESSAGE value="update main_console" />
+    <MESSAGE value="commit update" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit update" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TP1_biblio$gestion_csv.coverage" NAME="gestion_csv Coverage Results" MODIFIED="1765574182817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/outils" />
+    <SUITE FILE_PATH="coverage/TP1_biblio$test.coverage" NAME="test Coverage Results" MODIFIED="1765587221452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TP1_biblio$mainNadia.coverage" NAME="TP1.biblio Coverage Results" MODIFIED="1765568972881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TP1_biblio$controleur_principal.coverage" NAME="controleur_principal Coverage Results" MODIFIED="1765574291862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controleurs_console" />
+    <SUITE FILE_PATH="coverage/TP1_biblio$fenetre_principale.coverage" NAME="fenetre_principale Coverage Results" MODIFIED="1765589832414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface_pyqt" />
+    <SUITE FILE_PATH="coverage/TP1_biblio$controleur_adherents.coverage" NAME="controleur_adherents Coverage Results" MODIFIED="1765574093756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controleurs_console" />
+    <SUITE FILE_PATH="coverage/TP1_biblio$controleur_emprunts.coverage" NAME="controleur_emprunts Coverage Results" MODIFIED="1765574104454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controleurs_console" />
+    <SUITE FILE_PATH="coverage/TP1_biblio$validations.coverage" NAME="validations Coverage Results" MODIFIED="1765582198548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/outils" />
+    <SUITE FILE_PATH="coverage/TP1_biblio$Programme_principale_Tarek.coverage" NAME="Programme principale Tarek Coverage Results" MODIFIED="1765569150734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TP1_biblio$Programme_Principal_NADIA.coverage" NAME="Programme Principal NADIA Coverage Results" MODIFIED="1765567400051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TP1_biblio$main_avec_PyQT6.coverage" NAME="main avec_PyQT6 Coverage Results" MODIFIED="1765632427565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TP1_biblio$controleur_documents.coverage" NAME="controleur_documents Coverage Results" MODIFIED="1765574100844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controleurs_console" />
+    <SUITE FILE_PATH="coverage/TP1_biblio$Programme_principale_Tarek_main.coverage" NAME="Programme principale Tarek_main Coverage Results" MODIFIED="1765631784445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TP1_biblio$FFFF.coverage" NAME="FFFF Coverage Results" MODIFIED="1765569071499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TP1_biblio$hh.coverage" NAME="hh Coverage Results" MODIFIED="1765569102193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
