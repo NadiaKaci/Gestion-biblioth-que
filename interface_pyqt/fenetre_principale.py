@@ -427,7 +427,7 @@ class FenetrePrincipale(QMainWindow):
         event.accept()
 
 
-# ========= fonction globale pour lancer l'interface =========
+# = fonction globale pour lancer l'interface =
 def lancer_interface() -> None:
     app = QApplication(sys.argv)
     fen = FenetrePrincipale()

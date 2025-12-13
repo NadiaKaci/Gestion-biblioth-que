@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="055a91af-08d9-43cc-b91b-e37a904ee33e" name="Changes" comment="commit update" />
+    <list default="true" id="055a91af-08d9-43cc-b91b-e37a904ee33e" name="Changes" comment="commit update">
+      <change beforePath="$PROJECT_DIR$/interface_pyqt/fenetre_principale.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface_pyqt/fenetre_principale.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,7 +108,7 @@
       <updated>1765567196127</updated>
       <workItem from="1765567197577" duration="1110000" />
       <workItem from="1765568450912" duration="759000" />
-      <workItem from="1765569220203" duration="26260000" />
+      <workItem from="1765569220203" duration="27135000" />
     </task>
     <task id="LOCAL-00001" summary="OK">
       <option name="closed" value="true" />
@@ -236,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765635102095</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="commit update">
+      <option name="closed" value="true" />
+      <created>1765636557266</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1765636557266</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
