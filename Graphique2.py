@@ -9,6 +9,7 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtGui import QFont, QColor, QPalette
 from PyQt6.QtCore import Qt
 from datetime import date, timedelta, datetime
+import csv
 import sys
 
 # ---------------------------------
@@ -19,11 +20,11 @@ class Document:
         self.id = id_doc
         self.titre = titre
         self.auteur = auteur
-        self.est_disponible = True  # Tous les documents sont disponibles par défaut
 
 class Livre(Document):
-    def __init__(self, id_doc, titre, auteur=""):
+    def __init__(self, id_doc, titre, auteur="", est_disponible=True):
         super().__init__(id_doc, titre, auteur)
+        self.est_disponible = est_disponible
 
 class BandeDessinee(Document):
     def __init__(self, id_doc, titre, auteur, dessinateur):
@@ -91,13 +92,11 @@ class Bibliotheque:
     # Emprunts
     def ajouter_emprunt(self, id_ad, id_doc):
         adherent = next((a for a in self.adherents if a.id == id_ad), None)
-        doc = next((d for d in self.documents if d.id == id_doc), None)
-        if not adherent:
-            return None  # Adhérent introuvable
-        if not doc:
-            return None  # Document introuvable
+        doc = next((d for d in self.documents if d.id == id_doc and isinstance(d, Livre)), None)
+        if not adherent or not doc:
+            return None
         if not doc.est_disponible:
-            return None  # Document déjà emprunté
+            return None
         id_em = self.nouvelle_id(self.emprunts)
         date_e = date.today()
         date_r = date_e + timedelta(days=15)
@@ -108,9 +107,9 @@ class Bibliotheque:
     def retour_emprunt(self, id_em):
         emprunt = next((e for e in self.emprunts if e.id == id_em), None)
         if emprunt:
-            doc = next((d for d in self.documents if d.id == emprunt.id_doc), None)
-            if doc:
-                doc.est_disponible = True
+            livre = next((l for l in self.documents if l.id == emprunt.id_doc), None)
+            if livre:
+                livre.est_disponible = True
             self.emprunts = [e for e in self.emprunts if e.id != id_em]
             return True
         return False
@@ -125,6 +124,7 @@ class BibliothequeGUI(QWidget):
         self.setWindowTitle("Bibliothèque")
         self.setGeometry(200, 200, 800, 600)
 
+        # Couleur de fond
         palette = self.palette()
         palette.setColor(QPalette.ColorRole.Window, QColor("#34495e"))
         self.setPalette(palette)
@@ -132,18 +132,21 @@ class BibliothequeGUI(QWidget):
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
 
+        # Titre Bienvenue
         self.label_welcome = QLabel("Bienvenue à votre Bibliothèque")
         self.label_welcome.setFont(QFont("Arial", 20))
         self.label_welcome.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_welcome.setStyleSheet("color: white;")
         self.layout.addWidget(self.label_welcome)
 
+        # Choisir option
         self.label_option = QLabel("Choisissez une option :")
         self.label_option.setFont(QFont("Arial", 16))
         self.label_option.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_option.setStyleSheet("color: white;")
         self.layout.addWidget(self.label_option)
 
+        # Onglets
         self.tabs = QTabWidget()
         self.layout.addWidget(self.tabs)
 
@@ -151,12 +154,15 @@ class BibliothequeGUI(QWidget):
         self.tab_documents()
         self.tab_emprunts()
 
-    # ------------------- Adhérents -------------------
+    # -------------------
+    # Onglet Adhérents
+    # -------------------
     def tab_adherents(self):
         tab = QWidget()
         layout = QVBoxLayout()
         tab.setLayout(layout)
 
+        # Champs
         self.nom_ad = QLineEdit()
         self.nom_ad.setPlaceholderText("Nom")
         layout.addWidget(self.nom_ad)
@@ -169,6 +175,7 @@ class BibliothequeGUI(QWidget):
         self.email_ad.setPlaceholderText("Email")
         layout.addWidget(self.email_ad)
 
+        # Boutons
         btn_layout = QHBoxLayout()
         layout.addLayout(btn_layout)
 
@@ -184,6 +191,7 @@ class BibliothequeGUI(QWidget):
         btn_del.clicked.connect(self.supprimer_adherent)
         btn_layout.addWidget(btn_del)
 
+        # Zone texte
         self.text_adherents = QTextEdit()
         self.text_adherents.setReadOnly(True)
         layout.addWidget(self.text_adherents)
@@ -191,9 +199,9 @@ class BibliothequeGUI(QWidget):
         self.tabs.addTab(tab, "Adhérents")
 
     def ajouter_adherent(self):
-        nom = self.nom_ad.text().strip()
-        prenom = self.prenom_ad.text().strip()
-        email = self.email_ad.text().strip()
+        nom = self.nom_ad.text()
+        prenom = self.prenom_ad.text()
+        email = self.email_ad.text()
         if not nom or not prenom:
             QMessageBox.warning(self, "Erreur", "Nom et prénom obligatoires")
             return
@@ -218,12 +226,15 @@ class BibliothequeGUI(QWidget):
             else:
                 QMessageBox.warning(self, "Erreur", "ID introuvable")
 
-    # ------------------- Documents -------------------
+    # -------------------
+    # Onglet Documents
+    # -------------------
     def tab_documents(self):
         tab = QWidget()
         layout = QVBoxLayout()
         tab.setLayout(layout)
 
+        # Type document
         self.type_doc = QComboBox()
         self.type_doc.addItems(["Livre", "Bande Dessinée", "Journal", "Dictionnaire"])
         layout.addWidget(self.type_doc)
@@ -244,6 +255,7 @@ class BibliothequeGUI(QWidget):
         self.date_doc.setPlaceholderText("Date parution YYYY-MM-DD (Journal uniquement)")
         layout.addWidget(self.date_doc)
 
+        # Boutons
         btn_layout = QHBoxLayout()
         layout.addLayout(btn_layout)
 
@@ -259,6 +271,7 @@ class BibliothequeGUI(QWidget):
         btn_del.clicked.connect(self.supprimer_document)
         btn_layout.addWidget(btn_del)
 
+        # Zone texte
         self.text_documents = QTextEdit()
         self.text_documents.setReadOnly(True)
         layout.addWidget(self.text_documents)
@@ -267,10 +280,10 @@ class BibliothequeGUI(QWidget):
 
     def ajouter_document(self):
         type_doc = self.type_doc.currentText()
-        titre = self.titre_doc.text().strip()
-        auteur = self.auteur_doc.text().strip()
-        dessinateur = self.dessinateur_doc.text().strip()
-        date_parution = self.date_doc.text().strip()
+        titre = self.titre_doc.text()
+        auteur = self.auteur_doc.text()
+        dessinateur = self.dessinateur_doc.text()
+        date_parution = self.date_doc.text()
 
         if not titre:
             QMessageBox.warning(self, "Erreur", "Titre obligatoire")
@@ -305,7 +318,8 @@ class BibliothequeGUI(QWidget):
                 line += f" | Dessinateur: {d.dessinateur}"
             if isinstance(d, Journal):
                 line += f" | Parution: {d.date_parution}"
-            line += f" | Disponible: {'Oui' if d.est_disponible else 'Non'}"
+            if isinstance(d, Livre):
+                line += f" | Disponible: {'Oui' if d.est_disponible else 'Non'}"
             self.text_documents.append(line)
 
     def supprimer_document(self):
@@ -318,7 +332,9 @@ class BibliothequeGUI(QWidget):
             else:
                 QMessageBox.warning(self, "Erreur", "ID introuvable")
 
-    # ------------------- Emprunts -------------------
+    # -------------------
+    # Onglet Emprunts
+    # -------------------
     def tab_emprunts(self):
         tab = QWidget()
         layout = QVBoxLayout()
@@ -329,7 +345,7 @@ class BibliothequeGUI(QWidget):
         layout.addWidget(self.id_ad_em)
 
         self.id_doc_em = QLineEdit()
-        self.id_doc_em.setPlaceholderText("ID Document")
+        self.id_doc_em.setPlaceholderText("ID Livre")
         layout.addWidget(self.id_doc_em)
 
         btn_layout = QHBoxLayout()
@@ -354,27 +370,19 @@ class BibliothequeGUI(QWidget):
         self.tabs.addTab(tab, "Emprunts")
 
     def ajouter_emprunt(self):
-        id_ad = self.id_ad_em.text().strip()
-        id_doc = self.id_doc_em.text().strip()
-        if not id_ad or not id_doc:
-            QMessageBox.warning(self, "Erreur", "Veuillez entrer ID Adhérent et ID Document")
-            return
+        id_ad = self.id_ad_em.text()
+        id_doc = self.id_doc_em.text()
         id_em = self.biblio.ajouter_emprunt(id_ad, id_doc)
         if id_em:
             QMessageBox.information(self, "Succès", f"Emprunt ajouté ID {id_em}")
-            self.id_ad_em.clear()
-            self.id_doc_em.clear()
         else:
-            QMessageBox.warning(
-                self, "Erreur",
-                "Impossible d'ajouter l'emprunt\n- Vérifiez les ID\n- Vérifiez la disponibilité du document"
-            )
+            QMessageBox.warning(self, "Erreur", "Impossible d'ajouter l'emprunt")
 
     def afficher_emprunts(self):
         self.text_emprunts.clear()
         for e in self.biblio.emprunts:
             self.text_emprunts.append(
-                f"ID Emprunt {e.id} | Adhérent {e.id_ad} | Document {e.id_doc} | Emprunt {e.date_emprunt} | Retour {e.date_retour}"
+                f"ID Emprunt {e.id} | Adhérent {e.id_ad} | Livre {e.id_doc} | Emprunt {e.date_emprunt} | Retour {e.date_retour}"
             )
 
     def retour_emprunt(self):
@@ -383,16 +391,16 @@ class BibliothequeGUI(QWidget):
             id_em = id_em.strip()
             success = self.biblio.retour_emprunt(id_em)
             if success:
-                QMessageBox.information(self, "Succès", "Document retourné")
+                QMessageBox.information(self, "Succès", "Livre retourné")
             else:
                 QMessageBox.warning(self, "Erreur", "ID introuvable")
 
-# ------------------- Programme principal -------------------
+# -------------------
+# Programme principal
+# -------------------
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     gui = BibliothequeGUI()
     gui.show()
     sys.exit(app.exec())
- br-Tarek
 #
-main
