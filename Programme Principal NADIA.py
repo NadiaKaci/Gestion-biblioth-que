@@ -4,7 +4,9 @@
 from abc import ABC, abstractmethod
 from datetime import datetime, date, timedelta
 import csv
+import os  # <- ajoute ceci si ce n'est pas déjà fait
 
+print("Le fichier sera créé dans :", os.getcwd())
 # ---------------------------------
 # Fonctions utilitaires
 # ---------------------------------
@@ -411,3 +413,4 @@ if __name__ == "__main__":
     b.charger_csv()
     menu = MenuPrincipal(b)
     menu.afficher()
+# fin
