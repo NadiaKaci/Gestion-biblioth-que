@@ -393,3 +393,6 @@ if __name__ == "__main__":
     gui = BibliothequeGUI()
     gui.show()
     sys.exit(app.exec())
+ br-Tarek
+#
+main
