@@ -403,4 +403,4 @@ if __name__ == "__main__":
     gui = BibliothequeGUI()
     gui.show()
     sys.exit(app.exec())
-#okf
+#
