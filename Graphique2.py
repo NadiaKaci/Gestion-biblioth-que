@@ -3,7 +3,8 @@
 # ---------------------------------
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QLabel, QPushButton,
-    QLineEdit, QMessageBox, QHBoxLayout, QTextEdit, QComboBox, QTabWidget
+    QLineEdit, QMessageBox, QHBoxLayout, QTextEdit,
+    QComboBox, QTabWidget, QInputDialog
 )
 from PyQt6.QtGui import QFont, QColor, QPalette
 from PyQt6.QtCore import Qt
@@ -218,6 +219,7 @@ class BibliothequeGUI(QWidget):
     def supprimer_adherent(self):
         id_ad, ok = QInputDialog.getText(self, "Supprimer adhérent", "ID :")
         if ok:
+            id_ad = id_ad.strip()
             success = self.biblio.supprimer_adherent(id_ad)
             if success:
                 QMessageBox.information(self, "Succès", "Adhérent supprimé")
@@ -323,6 +325,7 @@ class BibliothequeGUI(QWidget):
     def supprimer_document(self):
         id_doc, ok = QInputDialog.getText(self, "Supprimer document", "ID :")
         if ok:
+            id_doc = id_doc.strip()
             success = self.biblio.supprimer_document(id_doc)
             if success:
                 QMessageBox.information(self, "Succès", "Document supprimé")
@@ -385,6 +388,7 @@ class BibliothequeGUI(QWidget):
     def retour_emprunt(self):
         id_em, ok = QInputDialog.getText(self, "Retour Emprunt", "ID Emprunt :")
         if ok:
+            id_em = id_em.strip()
             success = self.biblio.retour_emprunt(id_em)
             if success:
                 QMessageBox.information(self, "Succès", "Livre retourné")
