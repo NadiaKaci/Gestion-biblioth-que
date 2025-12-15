@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Black">
+ br-Tarek
     <option name="sdkName" value="Python 3.14 (TP1.biblio)" />
   </component>
+
+    <option name="sdkName" value="Python 3.13 (Révision)" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13" project-jdk-type="Python SDK" />
+ main
 </project>
